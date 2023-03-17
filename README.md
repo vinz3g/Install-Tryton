@@ -41,42 +41,63 @@ postgres 30
 ```
 sudo apt install postgresql postgresql-contrib
 ```
-~~
-sudo apt update && sudo apt -y upgrade
+
+~~sudo apt update && sudo apt -y upgrade
 sudo reboot
 sudo apt install -y wget
 
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+~~wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo tee /etc/apt/sources.list.d/pgdg.list <<END deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main END
 sudo apt update
 sudo apt -y install postgresql-11
 sudo systemctl start postgresql@11-main
-~~
 
-sudo nano /etc/postgresql/11/main/postgresql.conf
+
+~~sudo nano /etc/postgresql/11/main/postgresql.conf
+
+```
+sudo nano /etc/postgresql/14/main/postgresql.conf
+```
+
 add line to conf file by connention settings
-listen_addresses = '*'
 
+```
+listen_addresses = '*'
+```
+```
 sudo systemctl restart postgresql
-sudo ufw allow 5432/tcp
-sudo apt-get install python-psycopg2
-sudo apt-get install libpq-dev
-sudo apt-get install python3-psycopg2
+```
+
+~~sudo ufw allow 5432/tcp
+
+```
+sudo apt-get install python-psycopg2 libpq-dev python3-psycopg2
+```
 
 create database
+```
 sudo -u postgres psql
-
+```
+```
 CREATE DATABASE tryton_test WITH OWNER = postgres ENCODING = 'UTF8' LC_COLLATE = 'C' LC_CTYPE = 'C' TABLESPACE = pg_default CONNECTION LIMIT = -1 TEMPLATE template0;
+```
 
 create role
+```
 CREATE ROLE tryton_test WITH LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT NOREPLICATION CONNECTION LIMIT -1 PASSWORD 'tryton_test';
-
-postgres=# \q
+```
+postgres=#
+```
+\q
+```
 
 make trytond.config
+```
 sudo mkdir /etc/tryton
-
+```
+```
 sudo nano /etc/tryton/trytond.conf
+```
 past: (sorry don’t remeber the source)
 
 ```
@@ -134,15 +155,18 @@ past: (sorry don’t remeber the source)
  [sale]
 ```
 initialize database
+```
 trytond-admin -c /etc/tryton/trytond.conf -d tryton_test --all
+```
 “admin” email for “tryton_test”: YOURMAIL@YOUKNOWHAT.COM
 “admin” password for “tryton_test”: snafu
 “admin” password confirmation: snafu
 —>
 
 run trytond
+```
 trytond -c /etc/tryton/trytond.conf
-
+```
 run tryton client
 tryton
 Host: localhost
