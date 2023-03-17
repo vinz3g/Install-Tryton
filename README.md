@@ -12,19 +12,30 @@ sudo apt-get update
 sudo apt-get upgrade
 
 install pip 3
+```
 sudo apt-get install python3-pip
-
+```
 install tryton en tytond en tryton_sale
-sudo apt install pkg-config
-pip3 install trytond
-sudo apt-get install libglib2.0-dev
-sudo apt-get install libgirepository1.0-dev
-sudo apt-get install python3-cairo
-sudo apt-get install libcairo2-dev
-pip3 install pycairo
-pip3 install tryton
-`pip3 install trytond_sale’
 
+```
+sudo apt install pkg-config
+```
+
+```
+pip3 install trytond
+```
+```
+sudo apt-get install libglib2.0-dev libgirepository1.0-dev python3-cairo libcairo2-dev
+```
+```
+pip3 install pycairo
+```
+```
+pip3 install tryton
+```
+```
+`pip3 install trytond_sale’
+```
 installing postgres
 postgres 30
 
