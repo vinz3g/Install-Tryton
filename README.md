@@ -38,7 +38,10 @@ pip3 install tryton
 ```
 installing postgres
 postgres 30
-
+```
+sudo apt install postgresql postgresql-contrib
+```
+~~ ~~
 sudo apt update && sudo apt -y upgrade
 sudo reboot
 sudo apt install -y wget
@@ -48,6 +51,8 @@ sudo tee /etc/apt/sources.list.d/pgdg.list <<END deb http://apt.postgresql.org/p
 sudo apt update
 sudo apt -y install postgresql-11
 sudo systemctl start postgresql@11-main
+~~ ~~
+
 sudo nano /etc/postgresql/11/main/postgresql.conf
 add line to conf file by connention settings
 listen_addresses = '*'
