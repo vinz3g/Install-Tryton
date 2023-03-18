@@ -1,4 +1,17 @@
 # Install-Tryton
+
+Antes de instalar
+modificar 
+
+/etc/bash.bashrc
+```
+sudo nano /etc/bash.bashrc
+```
+```
+if [ -d "$HOME/.local" ] ; then
+PATH="$HOME/local:$PATH"
+fi
+```
 Installing tryton(d) 5.2* on ubuntu 18.04.3 with postgres 11 for newbys by newby
 since it took me a while to get tryton running. i want to chair the steps i took.
 
