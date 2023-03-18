@@ -3,14 +3,25 @@ Installing tryton(d) 5.2* on ubuntu 18.04.3 with postgres 11 for newbys by newby
 since it took me a while to get tryton running. i want to chair the steps i took.
 
 install tryton 5.2.* on ubuntu 18.04.3 with postrges 11 for newbys by newby
+```
 install ubuntu 18.04.3
+```
+```
 download ubuntu 26
-
+```
 open terminal
-crtl + alt + t
-sudo apt-get update
-sudo apt-get upgrade
 
+```
+crtl + alt + t
+```
+```
+sudo apt-get update
+
+```
+sudo apt-get upgrade
+```
+
+```
 install pip 3
 ```
 sudo apt-get install python3-pip
